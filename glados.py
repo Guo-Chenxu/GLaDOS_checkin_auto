@@ -12,7 +12,7 @@ if __name__ == '__main__':
     if cookies[0] == "":
         print('未获取到COOKIE变量') 
         cookies = []
-        exit(0)
+        exit(1)
     url= "https://glados.rocks/api/user/checkin"
     url2= "https://glados.rocks/api/user/status"
     referer = 'https://glados.rocks/console/checkin'
@@ -35,6 +35,7 @@ if __name__ == '__main__':
         else:
             requests.get('http://www.pushplus.plus/send?token=' + sckey + '&content='+email+'cookie已失效')
             print('cookie已失效')  # 日志输出
+            exit(1)
      #--------------------------------------------------------------------------------------------------------#   
     if sckey != "":
          requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+email+'签到成功'+'&content='+sendContent)
