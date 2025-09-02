@@ -39,6 +39,9 @@ if __name__ == '__main__':
                 exit(1)
         except Exception as e:
             print(f'出现错误: {e}')
+            print('返回内容；')
+            print(f'  checkin: {checkin.text}')
+            print(f'  state: {state.text}')
      #--------------------------------------------------------------------------------------------------------#   
     if sckey != "":
          requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+email+'签到成功'+'&content='+sendContent)
